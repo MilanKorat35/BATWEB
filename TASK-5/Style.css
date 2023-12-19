@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    color: #333;
+    background-color: skyblue;
+}
+
+div {
+    background-color: darkblue;
+}
+
+h1 {
+    text-align: center;
+    color: yellowgreen
+}
+
+hr {
+    border: 1px solid #ccc;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+h3 {
+    color: #333;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Add more styles as needed */
