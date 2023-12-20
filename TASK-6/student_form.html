@@ -1,1 +1,8 @@
+<!-- students/templates/students/student_form.html -->
+<h2>Student Admission Form</h2>
+<form method="post" action="{% url 'student_form' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
 
