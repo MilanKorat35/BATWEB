@@ -1,1 +1,8 @@
+<!-- students/templates/students/student_database.html -->
+<h2>Student Database</h2>
+<ul>
+    {% for student in students %}
+        <li>{{ student.first_name }} {{ student.last_name }} - {{ student.email }}</li>
+    {% endfor %}
+</ul>
 
