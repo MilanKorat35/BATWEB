@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+    
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
+        <label for="city">Enter City:</label>
+        <input type="text" id="city" name="city" required>
+        <button type="submit">Get Weather</button>
+    </form>
+
+    {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+    {% endif %}
+
+    {% if weather_info %}
+        <h2>Weather in {{ weather_info.city }}, {{ weather_info.country }}</h2>
+        <p>Temperature: {{ weather_info.temperature }}°C</p>
+        <p>Description: {{ weather_info.description }}</p>
+        <img src="http://openweathermap.org/img/wn/{{ weather_info.icon }}.png" alt="Weather Icon">
+    {% endif %}
+</body>
+</html>
