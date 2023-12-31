@@ -1,0 +1,28 @@
+<!-- chatbot_app/templates/chatbot_app/chat.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    
+    <div>
+        <form method="post" action="{% url 'chat' %}">
+            {% csrf_token %}
+            <label for="user_input">You:</label>
+            <input type="text" name="user_input" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    
+    <div>
+        <h3>Chat History:</h3>
+        {% for conversation in conversations %}
+            <p><strong>You:</strong> {{ conversation.user_input }}</p>
+            <p><strong>Bot:</strong> {{ conversation.model_output }}</p>
+            <hr>
+        {% endfor %}
+    </div>
+</body>
+</html>
